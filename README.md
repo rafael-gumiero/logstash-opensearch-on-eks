@@ -1,0 +1,1 @@
+# logstash-opensearch-on-eks
