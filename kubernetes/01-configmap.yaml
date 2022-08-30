@@ -14,6 +14,7 @@ data:
         topics => "${MSK_TOPICS}"
         group_id => "${MSK_CONSUMER_GRP_ID}"
         client_id => "${MSK_CONSUMER_CLI_ID}"
+        consumer_threads => "${MSK_CONSUMER_THREADS}"
         codec => "json"
         
       }
