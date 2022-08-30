@@ -35,9 +35,17 @@ spec:
         - name: AOS_USER
           value: "username"
         - name: AOS_PASSWORD
-          value: "password"
+          value: "p@ssword"
+        - name: AOS_INDEX
+          value: "log-messages"
         - name: MSK_BOOTSTRAP_SERVERS
           value: "b-1.sample.kafka.us-east-1.amazonaws.com:9092,b-2.sample.kafka.us-east-1.amazonaws.com:9092,b-3.sample.kafka.us-east-1.amazonaws.com:9092"
+        - name: MSK_TOPICS
+          value: "log-messages"
+        - name: MSK_CONSUMER_GRP_ID
+          value: "logstash-grp"
+         - name: MSK_CONSUMER_CLI_ID
+          value: "logstash-cli-01"
       volumes:
       - name: config-volume
         configMap:
