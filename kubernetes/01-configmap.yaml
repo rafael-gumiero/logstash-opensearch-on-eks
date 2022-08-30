@@ -11,10 +11,11 @@ data:
     input {
       kafka {
         bootstrap_servers => "${MSK_BOOTSTRAP_SERVERS}"
-        topics => "log-messages"
-        group_id => "logstash"
-        client_id => "logstash1"
+        topics => "${MSK_TOPICS}"
+        group_id => "${MSK_CONSUMER_GRP_ID}"
+        client_id => "${MSK_CONSUMER_CLI_ID}"
         codec => "json"
+        
       }
     }
     output {
@@ -25,6 +26,6 @@ data:
           user => "${AOS_USER}"
           password => "$AOS_PASSWORD}"
         }
-        index => "log-messages-%{+YYYY.MM.dd}"
+        index => "${AOS_INDEX}-%{+YYYY.MM.dd}"
       }
     }
