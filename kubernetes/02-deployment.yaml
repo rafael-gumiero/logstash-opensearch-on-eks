@@ -44,8 +44,10 @@ spec:
           value: "log-messages"
         - name: MSK_CONSUMER_GRP_ID
           value: "logstash-grp"
-         - name: MSK_CONSUMER_CLI_ID
+        - name: MSK_CONSUMER_CLI_ID
           value: "logstash-cli-01"
+        - name: MSK_CONSUMER_THREADS
+          value: "1"
       volumes:
       - name: config-volume
         configMap:
