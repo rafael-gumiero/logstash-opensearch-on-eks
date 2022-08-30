@@ -23,6 +23,13 @@ spec:
     ports:
     - containerPort: 25826
     - containerPort: 5044
+    resources: # Verify the amount of requests
+      requests:
+        memory: "128Mi"
+        cpu: "250m"
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
     env:
     - name: AOS_HOSTS
       value: "https://vpc-rgumiero-opensearch-vpc-okta-iraucwcpipvlnh4c6oca7fjjp4.us-east-1.es.amazonaws.com:443"
