@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: logstash-configmap
+  namespace: logstash-opensearch
 data:
   logstash.yml: |
     http.host: "0.0.0.0"
@@ -9,7 +10,7 @@ data:
   logstash.conf: |
     input {
       kafka {
-        bootstrap_servers => "b-5.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-1.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-2.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092"
+        bootstrap_servers => "${MSK_BOOTSTRAP_SERVERS}"
         topics => "log-messages"
         group_id => "logstash"
         client_id => "logstash1"
