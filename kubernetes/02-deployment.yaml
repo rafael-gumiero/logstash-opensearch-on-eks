@@ -31,13 +31,13 @@ spec:
             cpu: "2000m"
         env:
         - name: AOS_HOSTS
-          value: "https://vpc-rgumiero-opensearch-vpc-okta-iraucwcpipvlnh4c6oca7fjjp4.us-east-1.es.amazonaws.com:443"
+          value: "https://vpc-sample.us-east-1.es.amazonaws.com:443"
         - name: AOS_USER
-          value: "opensearch"
+          value: "username"
         - name: AOS_PASSWORD
-          value: "opensearch"
+          value: "password"
         - name: MSK_BOOTSTRAP_SERVERS
-          value: "b-5.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-1.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-2.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092"
+          value: "b-1.sample.kafka.us-east-1.amazonaws.com:9092,b-2.sample.kafka.us-east-1.amazonaws.com:9092,b-3.sample.kafka.us-east-1.amazonaws.com:9092"
       volumes:
       - name: config-volume
         configMap:
