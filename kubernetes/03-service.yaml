@@ -4,6 +4,7 @@ metadata:
   labels:
     app: logstash
   name: logstash
+  namespace: logstash-opensearch 
 spec:
   ports:
     - name: "25826"
