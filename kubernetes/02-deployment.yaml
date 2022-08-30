@@ -1,10 +1,21 @@
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   labels:
     app: logstash
   name: logstash
   namespace: logstash-opensearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: logstash
 spec:
   containers:
   - image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
