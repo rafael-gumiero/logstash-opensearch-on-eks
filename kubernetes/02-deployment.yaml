@@ -19,7 +19,7 @@ spec:
       value: "opensearch"
     - name: AOS_PASSWORD
       value: "opensearch"
-    - name: MSK_BOOTSRAP_SERVERS
+    - name: MSK_BOOTSTRAP_SERVERS
       value: "b-5.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-1.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092,b-2.rgumiero.16f8b1.c25.kafka.us-east-1.amazonaws.com:9092"
     resources: {}
     volumeMounts:
