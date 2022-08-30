@@ -4,6 +4,7 @@ metadata:
   labels:
     app: logstash
   name: logstash
+  namespace: logstash-opensearch
 spec:
   containers:
   - image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
