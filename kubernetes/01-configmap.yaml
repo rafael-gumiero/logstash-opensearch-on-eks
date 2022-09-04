@@ -25,7 +25,7 @@ data:
         auth_type => {
           type => 'basic'
           user => "${AOS_USER}"
-          password => "$AOS_PASSWORD}"
+          password => "${AOS_PASSWORD}"
         }
         index => "${AOS_INDEX}-%{+YYYY.MM.dd}"
       }
