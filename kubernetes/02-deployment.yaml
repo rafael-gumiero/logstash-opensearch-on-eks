@@ -28,7 +28,12 @@ spec:
             cpu: "250m"
           limits:
             memory: "2048Mi"
-            cpu: "2000m"
+            cpu: "2000m"            
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/logstash/config
+        - name: logstash-pipeline-volume 
+          mountPath: /usr/share/logstash/pipeline
         env:
         - name: AOS_HOSTS
           value: "https://vpc-sample.us-east-1.es.amazonaws.com:443"
@@ -48,24 +53,19 @@ spec:
           value: "logstash-cli-01"
         - name: MSK_CONSUMER_THREADS
           value: "1"
-    volumeMounts:
-    - name: config-volume
-      mountPath: /usr/share/logstash/config
-    - name: logstash-pipeline-volume
-      mountPath: /usr/share/logstash/pipeline
-  restartPolicy: OnFailure
-  volumes:
-  - name: config-volume
-    configMap:
-      name: logstash-configmap
-      items:
-        - key: logstash.yml
-          path: logstash.yml
-  - name: logstash-pipeline-volume
-    configMap:
-      name: logstash-configmap
-      items:
-        - key: logstash.conf
-          path: logstash.conf
-          
+      restartPolicy: Always
+      volumes:
+      - name: config-volume
+        configMap:
+          name: logstash-configmap
+          items:
+            - key: logstash.yml
+              path: logstash.yml
+      - name: logstash-pipeline-volume
+        configMap:
+          name: logstash-configmap
+          items:
+            - key: logstash.conf
+              path: logstash.conf
 status: {}
+---
